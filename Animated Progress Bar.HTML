@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress Bar</title>
+    <style>
+        .bar { width: 0%; height: 20px; background: green; }
+    </style>
+</head>
+<body>
+    <div class="bar" id="progress"></div>
+    <button onclick="fillBar()">Start</button>
+    <script>
+        function fillBar() {
+            let bar = document.getElementById("progress");
+            let width = 0;
+            let interval = setInterval(() => {
+                if (width >= 100) clearInterval(interval);
+                else { width++; bar.style.width = width + "%"; }
+            }, 50);
+        }
+    </script>
+</body>
+</html>
